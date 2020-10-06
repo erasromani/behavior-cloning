@@ -28,5 +28,7 @@ Our neural network starts with a CNN network to extract visual / temporal featur
 
 The loss function is given by the weighted addition of two cross-entropy loss evaluated following each subnetwork and is expressed as follows
 
-
 ![alt text](https://latex.codecogs.com/gif.latex?L%20%3D%20L_%7Bsteer%7D%20&plus;%20%5Clambda%20L_%7Baccelerate%7D)
+
+
+where ![alt text](https://latex.codecogs.com/gif.latex?L), ![alt text](https://latex.codecogs.com/gif.latex?L_%7Bsteer%7D), and ![alt text](https://latex.codecogs.com/gif.latex?L_%7Baccelerate%7D)  is the total loss, cross-entropy loss for the steer subnetwork, and the cross-entropy loss for the accelerate subnetwork. 𝜆 is a scaling factor which is set empirically to ensure each component of the loss are of similar scale. Based on our observations, 𝜆=1.0 yields comparable scales between the steering and acceleration loss components.
