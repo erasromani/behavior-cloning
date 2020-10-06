@@ -28,6 +28,10 @@ Our neural network starts with a CNN network to extract visual / temporal featur
 
 The loss function is given by the weighted addition of two cross-entropy loss evaluated following each subnetwork and is expressed as follows
 
-\begin{equation}
-L = L_{steer} + L_{accelerate}\
-\end{equation}
+This math is inline $`a^2+b^2=c^2`$.
+
+This is on a separate line
+
+```math
+a^2+b^2=c^2
+```
