@@ -44,7 +44,7 @@ We evaluated the impact of training set size on performance by assessing the val
 
 ![learning rate finder](https://github.com/erasromani/car-racing/blob/main/images/learning_rate_finder.png)
 
-2. In our initial iteration of the model, we used one hot encoded discrete actions such that the network can only output one action at each time step. This approach did not prove to work as it did not allow for the complex action scheme required during a sharp turn in which both breaking and steering is required in unison. We therefore
+2. In our initial iteration of the model, we used one hot encoded discrete actions such that the network can only output one action at each time step. This approach did not prove to work as it did not allow for the complex action scheme required during a sharp turn in which both breaking and steering is required in unison. We therefore developed the encoding highlighted in **Section 1.1** which allowed for representing multiple actions at each time step.
 
 3. The final CNN network used consists of four convolutional layers each made up of a stride 2 same padded convolution followed by ReLU and batch normalization functions. The first convolution layer applies a 5x5 kernel to yield a larger receptive field. All other convolution layers apply a 3x3 kernel. By trial an error, this form of architecture yields the best results. Furthermore, the addition of the batch normalization layer seems to help speed up training and improves training stability. 
 
