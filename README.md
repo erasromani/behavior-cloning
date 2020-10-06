@@ -32,8 +32,10 @@ L = L<sub>steer</sub> + 𝜆 L<sub>accelerate</sub>
 
 where L, L<sub>steer</sub>, and L<sub>accelerate</sub> is the total loss, cross-entropy loss for the steer subnetwork, and the cross-entropy loss for the accelerate subnetwork. 𝜆 is a scaling factor which is set empirically to ensure each component of the loss are of similar scale. Based on our observations, 𝜆=1.0 yields comparable scales between the steering and acceleration loss components.
 
-1.4 Training 
+## 1.4 Training 
 
 We evaluated the impact of training set size on performance by assessing the validation loss, accuracy, and agent 10 episode average score at different training set size values. Note that as the training set size increases, the accuracy increases while the loss decreases as expected. The agent score over training set size also show a similar trend.  
 
-![alt text](https://github.com/erasromani/car-racing/blob/main/images/sample_size_evaluation.PNG)
+<src img="https://github.com/erasromani/car-racing/blob/main/images/sample_size_evaluation.PNG">
+
+
