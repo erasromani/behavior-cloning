@@ -40,4 +40,16 @@ We evaluated the impact of training set size on performance by assessing the val
 
 ## 1.5 Lessons Learned
 
-a) In training the agent, we utilized the learning rate finder method described in [L. Smith. Cyclic Learning Rates for Training Neural Networks. arXiv preprint arXiv:1506.01186, 2015](https://arxiv.org/pdf/1506.01186.pdf) to find an appropriate learning rate. Below is an example figure of the learning rate finder process. The point at which the training loss decreases at the highest rate yields an appropriate learning rate.
+1. In training the agent, we utilized the learning rate finder method described in [L. Smith. Cyclic Learning Rates for Training Neural Networks. arXiv preprint arXiv:1506.01186, 2015](https://arxiv.org/pdf/1506.01186.pdf) to find an appropriate learning rate. Below is an example figure of the learning rate finder process. The point at which the training loss decreases at the highest rate yields an appropriate learning rate.
+
+![learning rate finder](https://github.com/erasromani/car-racing/blob/main/images/learning_rate_finder.png)
+
+2. In our initial iteration of the model, we used one hot encoded discrete actions such that the network can only output one action at each time step. This approach did not prove to work as it did not allow for the complex action scheme required during a sharp turn in which both breaking and steering is required in unison. We therefore
+
+3. The final CNN network used consists of four convolutional layers each made up of a stride 2 same padded convolution followed by ReLU and batch normalization functions. The first convolution layer applies a 5x5 kernel to yield a larger receptive field. All other convolution layers apply a 3x3 kernel. By trial an error, this form of architecture yields the best results. Furthermore, the addition of the batch normalization layer seems to help speed up training and improves training stability. 
+
+4. We tried to pool data across multiple students to yield a larger training set. The large size of the data made it difficult to lead everything into memory at once. We therefore save each frame as a png image and modified the __getitem__ method of the Dataset class such that each frame is processed upon being indexed. Unfortunately, due to time constraints, we were not able to complete this implementation approach. One interesting finding from pursuing this approach was that the selecting the appropriate image format is critical for training particularly at such low resolutions. The figure below depicts the difference between the original state extracted from the openai gym framework, a png version of the state, and a jpg version. Due to the image compression, jpg format yields a blurry image which hinders the training process.
+
+![image format comparison](https://github.com/erasromani/car-racing/blob/main/images/compare_format.png)
+
+5. We tried to use a resnet18 pretrained network as the CNN network to extract visual features. Unfortunately, the use of the pretrained network limits us to using a single rgb hence doesn’t allow for the extraction of temporal features. We therefore decided to develop a custom network which allows for a five-channel input.
