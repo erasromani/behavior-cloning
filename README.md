@@ -1,4 +1,4 @@
-# Car Racing
+# Behavior Cloning
 ## 1.0 Introduction
 For this project, we collected data from the openai gym “CarRacing-v0” gaming interface. This was done by playing the game various times. The data includes the following:
 * State – 96 x 96 pixel RGB image of each frame
