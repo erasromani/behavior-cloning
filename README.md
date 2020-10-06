@@ -6,13 +6,13 @@ For this exercise, we collected data from the openai gym “CarRacing-v0” gami
 
 Below is an example of the data collected. Note that the action associate with the frame is [-1, 0, 0] which denotes LEFT.
 
-![alt text](https://github.com/erasromani/car-racing/blob/main/images/example_data.png)
+![example data](https://github.com/erasromani/car-racing/blob/main/images/example_data.png)
 
 ## 1.1 Data Processing
 
 Given that actions are velocity dependent, we would like to restructure the for of the data such that the network has some signal of the velocity. This was done by first turning the images to grayscale, then stacking the past 5 frames to form a 5 x 96 x 96 rank 3 tensor. Below is an example of the input tensor. 
 
-![alt text](https://github.com/erasromani/car-racing/blob/main/images/input_tensor.png)
+![input tensor](https://github.com/erasromani/car-racing/blob/main/images/input_tensor.png)
 
 We also made some modifications to the form of the target variable, the action. It is given by a two-element vector [steer, accelerate] such that
 * steer = {“NOTHING”: 0, “LEFT”: 1, “RIGHT”, 2}
@@ -22,7 +22,7 @@ We also made some modifications to the form of the target variable, the action. 
 
 Our neural network starts with a CNN network to extract visual / temporal features, followed by two subnetworks each consisting of a two layer fully connected network. The first and second subnetwork is dedicated to predicting the probability of each component steer and accelerate respectively.
 
-![alt text](https://github.com/erasromani/car-racing/blob/main/images/network_architecture.png)
+![network architecture](https://github.com/erasromani/car-racing/blob/main/images/network_architecture.png)
 
 ## 1.3 Loss Function
 
@@ -36,6 +36,12 @@ where L, L<sub>steer</sub>, and L<sub>accelerate</sub> is the total loss, cross-
 
 We evaluated the impact of training set size on performance by assessing the validation loss, accuracy, and agent 10 episode average score at different training set size values. Note that as the training set size increases, the accuracy increases while the loss decreases as expected. The agent score over training set size also show a similar trend.  
 
-<src img="https://github.com/erasromani/car-racing/blob/main/images/sample_size_evaluation.PNG">
+![sample size evaluation](https://github.com/erasromani/car-racing/blob/main/images/sample_size_evaluation.PNG)
 
+## 1.5 Lessons Learned
+<ol type="a">
+  <li>a)	In training the agent, we utilized the learning rate finder method described in L. Smith. Cyclic Learning Rates for Training Neural Networks. arXiv preprint arXiv:1506.01186, 2015. to find an appropriate learning rate. Below is an example figure of the learning rate finder process. The point at which the training loss decreases at the highest rate yields an appropriate learning rate./li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
 
