@@ -36,3 +36,4 @@ where L, L<sub>steer</sub>, and L<sub>accelerate</sub> is the total loss, cross-
 
 We evaluated the impact of training set size on performance by assessing the validation loss, accuracy, and agent 10 episode average score at different training set size values. Note that as the training set size increases, the accuracy increases while the loss decreases as expected. The agent score over training set size also show a similar trend.  
 
+![alt text](https://github.com/erasromani/car-racing/blob/main/images/sample_size_evaluation.PNG)
