@@ -28,6 +28,11 @@ Our neural network starts with a CNN network to extract visual / temporal featur
 
 The loss function is given by the weighted addition of two cross-entropy loss evaluated following each subnetwork and is expressed as follows
 
-*L = L<sub>steer</sub> + 𝜆 *
+L = L<sub>steer</sub> + 𝜆 L<sub>accelerate</sub>
 
-where ![alt text](https://latex.codecogs.com/gif.latex?L), ![alt text](https://latex.codecogs.com/gif.latex?L_%7Bsteer%7D), and ![alt text](https://latex.codecogs.com/gif.latex?L_%7Baccelerate%7D)  is the total loss, cross-entropy loss for the steer subnetwork, and the cross-entropy loss for the accelerate subnetwork. 𝜆 is a scaling factor which is set empirically to ensure each component of the loss are of similar scale. Based on our observations, 𝜆=1.0 yields comparable scales between the steering and acceleration loss components.
+where L, L<sub>steer</sub>, and L<sub>accelerate</sub> is the total loss, cross-entropy loss for the steer subnetwork, and the cross-entropy loss for the accelerate subnetwork. 𝜆 is a scaling factor which is set empirically to ensure each component of the loss are of similar scale. Based on our observations, 𝜆=1.0 yields comparable scales between the steering and acceleration loss components.
+
+1.4 Training 
+
+We evaluated the impact of training set size on performance by assessing the validation loss, accuracy, and agent 10 episode average score at different training set size values. Note that as the training set size increases, the accuracy increases while the loss decreases as expected. The agent score over training set size also show a similar trend.  
+
