@@ -19,7 +19,7 @@ from utils import history_transform, rgb2gray, action_to_id, get_dl, accuracy
 
 def read_data(datasets_dir="./data", frac = 0.1):
     """
-    This method reads the states and actions recorded in drive_manually.py 
+    This method reads the states and actions recorded in openai gym
     and splits it into training/ validation set.
     """
     print("... read data")
@@ -213,6 +213,6 @@ if __name__ == "__main__":
     # preprocess data
     X_train, y_train, X_valid, y_valid = preprocessing(X_train, y_train, X_valid, y_valid)
 
-    # train model (you can change the parameters!)
+    # train model
     train_model(X_train, y_train, X_valid, y_valid, max_epoch=10, batch_size=16, lr=1e-3)
 
