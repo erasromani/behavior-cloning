@@ -40,7 +40,7 @@ We evaluated the impact of training set size on performance by assessing the val
 
 ## 1.5 Lessons Learned
 <ol type="a">
-  <li>a)	In training the agent, we utilized the learning rate finder method described in L. Smith. Cyclic Learning Rates for Training Neural Networks. arXiv preprint arXiv:1506.01186, 2015. to find an appropriate learning rate. Below is an example figure of the learning rate finder process. The point at which the training loss decreases at the highest rate yields an appropriate learning rate./li>
+  <li>In training the agent, we utilized the learning rate finder method described in [L. Smith. Cyclic Learning Rates for Training Neural Networks. arXiv preprint arXiv:1506.01186, 2015](https://arxiv.org/pdf/1506.01186.pdf) to find an appropriate learning rate. Below is an example figure of the learning rate finder process. The point at which the training loss decreases at the highest rate yields an appropriate learning rate./li>
   <li>Tea</li>
   <li>Milk</li>
 </ol>
