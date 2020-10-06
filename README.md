@@ -28,9 +28,12 @@ Our neural network starts with a CNN network to extract visual / temporal featur
 
 The loss function is given by the weighted addition of two cross-entropy loss evaluated following each subnetwork and is expressed as follows
 
-This math is inline $`a^2+b^2=c^2`$.
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js? 
+config=TeX-MML-AM_CHTML"
+</script>
 
-This is on a separate line
+$$x_{1,2} = \frac{-b \pm \sqrt{b^2-4ac}}{2b}.$$
 
 ```math
 a^2+b^2=c^2
