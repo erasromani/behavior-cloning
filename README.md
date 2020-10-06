@@ -28,8 +28,5 @@ Our neural network starts with a CNN network to extract visual / temporal featur
 
 The loss function is given by the weighted addition of two cross-entropy loss evaluated following each subnetwork and is expressed as follows
 
-$$x=\sqrt{2}$$
 
-<script type="text/javascript" async
-
-src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<img src="https://latex.codecogs.com/gif.latex?O_t=\text { Onset event at time bin } t " />
